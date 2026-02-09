@@ -1,0 +1,50 @@
+[
+    {
+        "brandImage": "hertz-logo.png",
+        "carImage": {
+            "xs":"car-red-xs.png",
+            "md":"car-red-md.png",
+            "lg":"car-red-lg.png"
+        },
+        "category": "Economico",
+        "name": "Kia soul",
+        "features":{
+            "pleople":5,
+            "bag":3,
+            "frezer": "A/C",
+            "atraction": "A/T"
+        },
+        "price":{
+            "oldPrice":550.552,
+            "actualPrice":319.552,
+            "totalPrice":925.552,
+            "dcto": 45
+        },
+        "badge":"Recomendado",
+        "typeBadge":"info"
+    },
+    {
+        "brandImage": "avis-logo.png",
+        "carImage": {
+            "xs":"car-gray-xs.png",
+            "md":"car-gray-md.png",
+            "lg":"car-gray-lg.png"
+        },
+        "category": "Economico",
+        "name": "Chevrolet",
+        "features":{
+            "pleople":5,
+            "bag":3,
+            "frezer": "A/C",
+            "atraction": "A/T"
+        },
+        "price":{
+            "oldPrice":550.552,
+            "actualPrice":319.552,
+            "totalPrice":925.552,
+            "dcto": 45
+        },
+        "badge":"¡Oferta de Hoy!",
+        "typeBadge":"purple"
+    }
+]

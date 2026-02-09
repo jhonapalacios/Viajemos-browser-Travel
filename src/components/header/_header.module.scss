@@ -1,0 +1,45 @@
+
+@import '../../styles/mixin';
+.header {
+    display: grid;
+    width: 100%;
+    margin: 0px;
+    height: 70px;
+    align-content: end;
+    padding-bottom: 10px;
+    background-color: $white;
+    .container{
+        display: flex;
+        width: calc(100% - ($space-xs * 2));
+        justify-content: space-between;
+        padding: 0px $space-xs;
+        max-width: $max-width;
+        margin:0 auto;
+        
+        @include minWidth($tablet){
+            padding:$space-xs;
+        }
+        .options {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+            li{
+                cursor: pointer;
+                @include minWidth($tablet){
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    max-height: 24px;
+                    span{
+                        @include text-style(14px , 600 , normal);
+                        color:$blue-3;
+                    }
+                }
+            }
+        }
+    }
+    @include minWidth($tablet){
+        padding-bottom:inherit;
+        height: auto;
+    }
+}

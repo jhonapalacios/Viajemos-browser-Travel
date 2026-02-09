@@ -1,0 +1,55 @@
+@import './variables';
+
+@mixin text-style($size , $weight , $style: normal) {
+    font-family: $poppins;
+    font-weight: $weight;
+    font-size: $size;
+    font-style: $style;
+    line-height: calc($size + 6px);
+}
+
+@mixin minWidth($breackpoint){
+    @media(min-width:$breackpoint){
+        @content;
+    }
+}
+
+@mixin bg-gradient() {
+    background: linear-gradient(49deg, $green-1 0%, $blue-1 100%);
+}
+@mixin bg-gradientInvert() {
+    background: linear-gradient(-49deg, $green-1 0%, $blue-1 100%);
+}
+
+@mixin btn-style() {
+    display: flex;
+    width: fit-content;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: $radius-xs;
+    text-decoration: none;
+    @include text-style(14px,700,normal);
+    @include minWidth($tablet){
+        border-radius:$radius-md;
+    }
+}
+
+@mixin badgeOutline{
+    border:solid 2px;
+    border-radius:$radius-xs;
+    @include text-style(14px,700,normal);
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 8px;
+    &.info{
+        background-color:rgba($blue-4 , .06);
+        border-color: $blue-4;
+        color:$blue-4;
+    }
+    &.purple{
+        background-color:rgba($purple , .06);
+        border-color: $purple;
+        color:$purple;
+    }
+}

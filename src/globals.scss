@@ -1,0 +1,110 @@
+@import './styles/reset';
+@import './styles/mixin';
+
+body, html{
+    @include text-style(12px , 400 , normal);
+    background-color:$bg-page;
+}
+
+.grid-result {
+    display: grid;
+    gap: 0;
+    width: calc(100% - ($space-xs * 2));
+    padding:$space-xs;
+    max-width: $max-width;
+    margin:auto;
+
+    .col-rigth{
+        display: grid;
+        gap: $space-xs;
+    }
+    
+    @include minWidth($large){
+        display: flex;
+        gap:$space-lg;
+        .col-rigth{
+            gap: $space-lg;
+            width: 100%;
+        }
+    }
+}
+
+.badgeOutline{
+    @include badgeOutline();
+    line-height: inherit;
+}
+
+.separator{
+    width: 1px;
+    height: 100%;
+    background-color: $gray-4;
+}
+
+.bigPrice{
+    text-align: right;
+    display: flex;
+    gap: 4px;
+    justify-content: end;
+    align-items: center;
+    .numberPrice{
+        @include text-style(18px , 700 , normal);
+        color:$blue-3;
+    }
+    span:nth-child(2){
+        max-height: 16px;
+        display: block
+    }
+    .time{
+        @include text-style(12px , 500 , normal);
+        color:$gray-2;
+    }
+
+}
+
+.btn{
+    @include btn-style();
+    &.btn-primary{
+        @include bg-gradient();
+        color: $white;
+        transition: all .3s;
+        &:hover{
+            @include bg-gradientInvert();
+        }
+    }
+    &.btn-secundary{
+        background-color: $white;
+        color: $blue-1;
+        border:solid 2px $blue-1;
+        transition: all .3s;
+        &:hover{
+            background-color: $blue-1;
+            color: $white;
+        }
+    }
+}
+
+.hidden-md{
+    display: block;
+    @include minWidth($tablet){
+        display: none;
+    }
+}
+.hidden-xs{
+    display: none;
+    @include minWidth($tablet){
+        display: block;
+    }
+}
+.visible-lg{
+    display: none;
+    @include minWidth($desktop){
+        display: block;
+    }
+}
+
+.visible-xxl{
+    display: none;
+    @include minWidth($large){
+        display: grid;
+    }
+}

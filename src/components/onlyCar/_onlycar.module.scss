@@ -1,0 +1,24 @@
+@import '../../styles/mixin';
+
+.car{
+    display: grid;
+    border-radius: 22px;
+    background-color: $white;
+    margin: 0;
+    width: calc( 100% - ($space-xs * 2));
+    padding: 22px $space-xs;
+    height: fit-content;
+    gap: $space-md;
+    .options{
+        display: grid;
+        gap: $space-md;
+        li{
+            display: flex;
+            align-items: center;
+            gap: $space-xs;
+            @include text-style(14px,600,normal);
+            color:$gray-1;
+        }
+
+    }
+}

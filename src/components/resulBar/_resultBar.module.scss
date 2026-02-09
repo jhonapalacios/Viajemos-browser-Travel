@@ -1,0 +1,51 @@
+@import '../../styles/mixin';
+.resultBar{
+    display: grid;
+    width: calc(100% - 4px);
+    background-color:$bg-section;
+    border:solid 2px $white;
+    .container{
+        padding: 5px $space-xs;
+        display: flex;
+        justify-content: space-between;
+        width:calc(100% - ($space-xs * 2));
+        max-width: $max-width;
+        align-items: center;
+        margin: auto;
+        @include minWidth($tablet){
+            padding: 10px $space-xs;
+        }
+        .bigCategory{
+            display: grid;
+            @include minWidth($tablet){
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            .category{
+                @include text-style(18px , 700 , normal);
+                color: $blue-3;
+                line-height: 20px;
+            }
+            .results{
+                @include text-style(12px , 600 , italic);
+                color: $gray-2;
+                line-height: 14px;
+            }
+        }
+        .priceCateogry{
+            display: grid;
+            .textPrice{
+                display: flex;
+                gap:5px;
+                @include text-style(14px , 600 , normal);
+                .categoryPrice{
+                    color:$blue-1;
+                }
+                .priceFrom{
+                    color:$gray-1;
+                }
+            }
+        }
+    }
+}

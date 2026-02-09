@@ -1,0 +1,273 @@
+@import '../../styles/mixin';
+
+.card{
+    display: grid;
+    border-radius: 22px;
+    background-color: $white;
+    margin: 0;
+    width: calc( 100% - ($space-xs * 2));
+    padding: 22px $space-xs;
+    @include minWidth($tablet){
+        display: flex;
+        align-items: center;
+        gap: $space-md;
+    }
+    @include minWidth($large){
+        gap: $space-lg;
+    }
+    .headCard{
+        .headerResult{
+            display: flex;
+            justify-content: space-between;
+            .infoCompany{
+                display: grid;
+                height: fit-content;
+                gap: 10px;
+                @include minWidth($tablet){
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                }
+                .contentInfoBrand{
+                    display: flex;
+                    align-items: center;
+                    gap:18px;
+                    height: fit-content;
+                    .rating{
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        span{
+                            @include text-style(14px , 600 , normal);
+                            color:$gray-1;
+                        }
+                    }
+                }
+                .airport{
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    height: fit-content;
+                    cursor: pointer;
+                    span{
+                        @include text-style(12px , 600 , normal);
+                        color:$gray-1;
+                    }
+                    &:hover{
+                        span{
+                            color:$blue-1;
+                        }
+                    }
+
+                }
+            }
+        }
+        .contentCar{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            .infoCar{
+                display: grid;
+                height: fit-content;
+                gap: 6px;
+                @include minWidth($tablet){
+                    .category{
+                        @include text-style(24px,700,normal);
+                        color:$blue-3;
+                    }
+                }
+                .brandCar{
+                    display: flex;
+                    align-items: center;
+                    gap:3px;
+                    @include text-style(12px,600,normal);
+                    color:$gray-1;
+                    .nameBrand{
+                        @include text-style(16px,700,normal);
+                        color:$blue-3;
+                    }
+                    .similarBrand{
+                        color:$blue-1;
+                    }
+                }
+                .features{
+                    display: flex;
+                    gap: $space-xs;
+                    align-items: center;
+                    @include text-style(12px,600,normal);
+                    color:$gray-1;
+                    li{
+                        display: flex;
+                        gap: 6px;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+    }
+    .divider{
+        display: block;
+        width: 100%;
+        height: 1px;
+        margin: $space-xs auto;
+        background-color: $gray-3;
+        @include minWidth($tablet){
+            height: 100%;
+            width: 1px;
+        }
+    }
+    .footCard{
+        .details{
+            .containerDetails{
+                display: flex;
+                justify-content: space-between;
+                    @include minWidth($tablet){
+                        gap: $space-md;
+                    }
+                .infoDetails{
+                    display: grid;
+                    gap: 10px;
+                    height: fit-content;
+                    justify-items: baseline;
+                    .headDetails{
+                        display: grid;
+                        gap:0;
+                        height: fit-content;
+                        @include text-style(12px,600,normal);
+                        color:$gray-1;
+                            @include minWidth($tablet){
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+                            }
+                        .titleDetails{
+                            @include text-style(16px,700,normal);
+                            color:$blue-1;
+
+                        }
+                    }
+                    .bodyDetails{
+                        display: grid;
+                        gap:4px;
+                        height: fit-content;
+                            @include minWidth($desktop){
+                                display: flex;
+                                gap: 10px;
+                            }
+                        li{
+                            display: flex;
+                            align-items: center;
+                            gap:6px;
+                            @include text-style(12px,600,normal);
+                            color:$green-3;
+                        }
+                    }
+                    .footDetails{
+                        display: grid;
+                        gap:27px;
+                            @include minWidth($tablet){
+                                display: flex;
+                                direction: rtl;
+                                align-items: center;
+                                gap: $space-xs;
+                            }
+                        .showDetails{
+                            display: flex;
+                            width: fit-content;
+                            height: fit-content;
+                            a{
+                                align-items: center;
+                                display: flex;
+                                @include text-style(12px,600,normal);
+                                text-decoration: none;
+                                color:$gray-2;
+                                gap: 6px;
+                                direction: ltr;
+                            }
+                        }
+                    }
+                }
+                .priceDetails{
+                    display: grid;
+                    align-content: space-between;
+                    justify-items: flex-end;
+                        @include minWidth($tablet){
+                            display: flex;
+                            gap: $space-md;
+                            align-items: center;
+                        }
+                    .infoPrice{
+                        display: grid;
+                        gap: 5px;
+                        justify-content: end;
+                        .oldPrice{
+                            display: flex;
+                            gap: 6px;
+                            align-items: center;
+                            .txtPrice{
+                                @include text-style(12px,600,normal);
+                                color: $gray-2;
+                                span{
+                                    text-decoration: line-through;
+                                }
+                            }
+                            .dcto{
+                                display: flex;
+                                min-width: 46px;
+                                height: 22px;
+                                gap: 0;
+                                background-image: url("../../images/bg-dcto.png");
+                                background-position: 0 0;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                                justify-content: end;
+                                span{
+                                    @include text-style(14px,600,normal);
+                                    color:$white;
+                                    position: relative;
+                                    right: 4px;
+                                    top: 2px;
+                                }
+                            }
+                        }
+                        .totalPrice{
+                            @include text-style(12px,600,normal);
+                            color: $gray-1;
+                            text-align: right;
+                        }
+                    }
+                }
+
+                &.policyOff{
+                    .infoDetails{
+                        .headDetails{
+                            .titleDetails{
+                                color:$blue-3;
+                            }
+
+                        }
+                    }
+                    .bodyDetails{
+                        li{
+                            color:$gray-2;
+                        }
+                    }
+                }
+            }
+        }
+        @include minWidth($desktop){
+            display: grid;
+            gap: $space-xs;
+            width: 100%;
+            .divider{
+                display: flex;
+                width: 100%;
+                height: 1px;
+                background-color: $gray-3;
+            }
+        }
+
+    }
+
+}
